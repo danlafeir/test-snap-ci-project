@@ -1,4 +1,22 @@
 {
-	name: 'dankon'
-	
+  "name": "ciproject",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dlafeir/test-snap-ci-project.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dlafeir/test-snap-ci-project/issues"
+  },
+  "homepage": "https://github.com/dlafeir/test-snap-ci-project#readme",
+  "dependencies": {
+    "mocha": "^2.2.5"
+  }
 }
