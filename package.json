@@ -18,6 +18,8 @@
   },
   "homepage": "https://github.com/dlafeir/test-snap-ci-project#readme",
   "dependencies": {
+    "ejs": "^2.3.3",
+    "express": "^4.13.3",
     "mocha": "^2.2.5"
   }
 }

@@ -3,22 +3,27 @@ module.exports = {
     dan: 'lafeir'
 }
 
-//Lets require/import the HTTP module
-var http = require('http');
+var express = require('express');
+var app = express();
 
-//Lets define a port we want to listen to
-const PORT=8080; 
+// set the port of our application
+// process.env.PORT lets the port be set by Heroku
+var port = process.env.PORT || 8080;
 
-//We need a function which handles requests and send response
-function handleRequest(request, response){
-    response.end('It Works!! Path Hit: ' + request.url);
-}
+// set the view engine to ejs
+app.set('view engine', 'ejs');
 
-//Create a server
-var server = http.createServer(handleRequest);
+// make express look in the public directory for assets (css/js/img)
+app.use(express.static(__dirname + '/public'));
 
-//Lets start our server
-server.listen(PORT, function(){
-    //Callback triggered when server is successfully listening. Hurray!
-    console.log("Server listening on: http://localhost:%s", PORT);
+// set the home page route
+app.get('/', function(req, res) {
+
+    // ejs render automatically looks in the views folder
+    res.render('index');
 });
+
+app.listen(port, function() {
+    console.log('Our app is running on http://localhost:' + port);
+});
+//Lets start our server
